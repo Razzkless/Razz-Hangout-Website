@@ -11,13 +11,9 @@
 .side-by-side {
   flex-direction: row;
 }
-@font-face {
-  font-family: diediedie;
-  src: url(./resources/DIEDIEDI.TTF);
-}
 .scribble {
-  font-family: diediedie, "Comic Sans";
-  font-size: 2rem;
+  font-family: 'Times New Roman', Times, serif, "Comic Sans";
+  font-size: 1rem;
 }
 .professional {
   font-family: "Times New Roman", Times, serif;
