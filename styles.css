@@ -1,3 +1,27 @@
+.container {
+  display: flex;
+}
+.container-left-side {
+  flex-grow: 1;
+}
+.container-right-side {
+  flex-grow: 0;
+  align-self: center;
+}
+.side-by-side {
+  flex-direction: row;
+}
+@font-face {
+  font-family: diediedie;
+  src: url(./resources/DIEDIEDI.TTF);
+}
+.scribble {
+  font-family: diediedie, "Comic Sans";
+  font-size: 2rem;
+}
+.professional {
+  font-family: "Times New Roman", Times, serif;
+}
 body {
   background-image: url("./images/gangsters-with-guns.jpg");
   background-repeat: no-repeat;
@@ -111,6 +135,9 @@ body {
 }
 
 @media screen and (max-width: 960px) {
+  .side-by-side {
+    flex-direction: column;
+  }
   .navbar__container {
     display: flex;
     justify-content: space-between;
