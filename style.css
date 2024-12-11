@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  header {
+    background: #333;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo h1 {
+    color: #ff6f61;
+    margin: 0;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin-left: 1.5rem;
+  }
+  
+  header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #ff6f61;
+  }
+  
+  #hero {
+    background: url('./resources/banner.webp') no-repeat center center/cover;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  
+  #hero h2 {
+    font-size: 3rem;
+  }
+  
+  #hero p {
+    font-size: 1.2rem;
+  }
+  
+  #hero .btn {
+    background: #ff6f61;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  #hero .btn:hover {
+    background: #ff4433;
+  }
+  #join .btn {
+    background: #ff6f61;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  #join .btn:hover {
+    background: #ff4433;
+  }
+  
+  section {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  #features .features-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  #features .feature {
+    background: #222;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  
