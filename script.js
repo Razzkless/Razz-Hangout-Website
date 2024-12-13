@@ -1,4 +1,3 @@
-// Smooth scrolling for navigation links
 document.querySelectorAll('nav ul li a').forEach((link) => {
   link.addEventListener('click', function (e) {
     const targetId = this.getAttribute('href').substring(1);
@@ -10,7 +9,6 @@ document.querySelectorAll('nav ul li a').forEach((link) => {
   });
 });
 
-// Fade-in animation on scroll
 const fadeInElements = document.querySelectorAll('section');
 
 const handleFadeIn = () => {
@@ -25,7 +23,6 @@ const handleFadeIn = () => {
 window.addEventListener('scroll', handleFadeIn);
 document.addEventListener('DOMContentLoaded', handleFadeIn);
 
-// Ripple effect for buttons
 document.querySelectorAll('.btn').forEach((button) => {
   button.addEventListener('click', function (e) {
     const ripple = document.createElement('span');
@@ -40,7 +37,6 @@ document.querySelectorAll('.btn').forEach((button) => {
   });
 });
 
-// Shrink header on scroll
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
@@ -55,10 +51,8 @@ document.querySelectorAll('.collapsible-header').forEach((header) => {
   header.addEventListener('click', () => {
     const collapsible = header.parentElement;
 
-    // Toggle open class
     collapsible.classList.toggle('open');
 
-    // Close all other collapsibles
     document.querySelectorAll('.collapsible').forEach((item) => {
       if (item !== collapsible) {
         item.classList.remove('open');
@@ -67,7 +61,6 @@ document.querySelectorAll('.collapsible-header').forEach((header) => {
   });
 });
 
-// Smooth Scroll Animation for Sections
 document.addEventListener("DOMContentLoaded", () => {
   const animatedElements = document.querySelectorAll(".animate-text, .animate-btn, .animate-feature");
 
