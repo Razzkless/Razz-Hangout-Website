@@ -1,0 +1,135 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom right, #1e1e2f, #24243e);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Zorg dat de body minimaal schermhoogte heeft */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Flex wrapper for content */
+.wrapper {
+  flex: 1; /* Zorg dat deze alle ruimte opvult om de footer naar beneden te drukken */
+}
+
+/* Header styles */
+.header {
+  padding: 60px 20px;
+  background: #181820;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: #5865f2;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+  background: #4752c4;
+  transform: scale(1.1);
+}
+
+/* Features section */
+.features {
+  padding: 50px 20px;
+  background: #2e2e4e;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature {
+  background: #393961;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 0.9rem;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background: #181820;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
