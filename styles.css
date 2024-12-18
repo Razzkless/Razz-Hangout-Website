@@ -332,3 +332,60 @@ textarea {
 .form-response.error {
   color: #dc3545;
 }
+
+.live-stream {
+  padding: 50px 20px;
+  background: #2e2e4e;
+  color: #fff;
+}
+
+.live-stream h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.stream-container {
+  background: #393961;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stream-container iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+.stream-info {
+  margin-top: 30px;
+}
+
+.stream-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.stream-info ul {
+  list-style: none;
+  padding: 0;
+  color: #ddd;
+}
+
+.stream-info li {
+  margin-bottom: 10px;
+}
+
+.stream-chat {
+  margin-top: 50px;
+}
+
+.stream-chat h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.stream-chat p {
+  font-size: 1rem;
+  color: #ddd;
+}

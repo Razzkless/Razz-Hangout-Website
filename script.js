@@ -6,21 +6,6 @@ document.getElementById('join-now-btn').addEventListener('click', function (even
   });
 });
 
-// Interactive animation when scrolling
-window.addEventListener('scroll', function () {
-  const features = document.querySelectorAll('.feature');
-  const triggerBottom = window.innerHeight / 5 * 4;
-
-  features.forEach((feature) => {
-    const featureTop = feature.getBoundingClientRect().top;
-    if (featureTop < triggerBottom) {
-      feature.classList.add('visible');
-    } else {
-      feature.classList.remove('visible');
-    }
-  });
-});
-
 // Handle form submission for the contact page
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault(); // Prevent the default form submission
