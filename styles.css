@@ -57,7 +57,7 @@ body {
   padding: 60px 20px;
   background: url('./resources/header.webp') center/cover no-repeat;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adds shadow to text for readability */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s;
 }
 
@@ -88,6 +88,48 @@ body {
 .btn:hover {
   background: #4752c4;
   transform: scale(1.1);
+}
+
+/* News Section */
+.news {
+  padding: 50px 20px;
+  background: #3e3e58;
+}
+
+.news h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news-item {
+  background: #4a4a6a;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.news-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.news-item p {
+  font-size: 0.9rem;
+}
+
+.news-item:hover {
+  transform: scale(1.05);
+  background-color: #5865f2;
 }
 
 /* Features section */
@@ -149,7 +191,7 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .feature-grid {
+  .feature-grid, .news-grid {
     flex-direction: column;
     align-items: center;
   }
