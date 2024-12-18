@@ -6,7 +6,8 @@ body {
   background: linear-gradient(to bottom right, #1e1e2f, #24243e);
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Zorg dat de body minimaal schermhoogte heeft */
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -18,14 +19,46 @@ body {
 
 /* Flex wrapper for content */
 .wrapper {
-  flex: 1; /* Zorg dat deze alle ruimte opvult om de footer naar beneden te drukken */
+  flex: 1;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #181820;
+  padding: 15px 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  font-size: 1.1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #5865f2;
 }
 
 /* Header styles */
 .header {
   padding: 60px 20px;
-  background: #181820;
+  background: url('./resources/header.webp') center/cover no-repeat;
   color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adds shadow to text for readability */
+  transition: background-color 0.3s;
 }
 
 .header h1 {
@@ -82,7 +115,15 @@ body {
   border-radius: 10px;
   max-width: 300px;
   text-align: left;
-  transition: transform 0.3s;
+  opacity: 0.8;
+  transform: scale(1);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Styles when feature is visible */
+.feature.visible {
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 .feature h3 {
@@ -119,6 +160,15 @@ footer {
 
   .btn {
     font-size: 0.9rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
   }
 }
 
