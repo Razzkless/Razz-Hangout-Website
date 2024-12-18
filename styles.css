@@ -132,6 +132,30 @@ body {
   background-color: #5865f2;
 }
 
+/* Additional News Information */
+.news-more-info {
+  background-color: #4a4a6a;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.news-more-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.news-more-info p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.news-more-info p:last-child {
+  margin-bottom: 0;
+}
+
 /* Features section */
 .features {
   padding: 50px 20px;
@@ -225,4 +249,86 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Contact Us Page */
+.contact {
+  padding: 50px 20px;
+  background: #2e2e4e;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  background: #393961;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #5865f2;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+#submit-btn {
+  background: #5865f2;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+  background: #4752c4;
+}
+
+/* Form Response */
+.form-response {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.form-response.success {
+  color: #28a745;
+}
+
+.form-response.error {
+  color: #dc3545;
 }
