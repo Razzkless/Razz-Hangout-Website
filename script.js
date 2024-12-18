@@ -1,6 +1,5 @@
 // Smooth scrolling for the "Join Now" button
 document.getElementById('join-now-btn').addEventListener('click', function (event) {
-  event.preventDefault();
   window.scrollTo({
     top: document.querySelector('.features').offsetTop,
     behavior: 'smooth',
@@ -15,11 +14,9 @@ window.addEventListener('scroll', function () {
   features.forEach((feature) => {
     const featureTop = feature.getBoundingClientRect().top;
     if (featureTop < triggerBottom) {
-      feature.style.transform = 'scale(1.05)';
-      feature.style.opacity = '1';
+      feature.classList.add('visible');
     } else {
-      feature.style.transform = 'scale(1)';
-      feature.style.opacity = '0.8';
+      feature.classList.remove('visible');
     }
   });
 });
