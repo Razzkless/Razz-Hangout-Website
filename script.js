@@ -1,11 +1,3 @@
-// Smooth scrolling for the "Join Now" button
-document.getElementById('join-now-btn').addEventListener('click', function (event) {
-  window.scrollTo({
-    top: document.querySelector('.features').offsetTop,
-    behavior: 'smooth',
-  });
-});
-
 // Handle form submission for the contact page
 document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault(); // Prevent the default form submission
