@@ -1,4 +1,3 @@
-/* Global styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -17,12 +16,10 @@ body {
   text-align: center;
 }
 
-/* Flex wrapper for content */
 .wrapper {
   flex: 1;
 }
 
-/* Navbar styles */
 .navbar {
   display: flex;
   justify-content: center;
@@ -52,7 +49,6 @@ body {
   color: #5865f2;
 }
 
-/* Header styles */
 .header {
   padding: 60px 20px;
   background: url('./resources/header.webp') center/cover no-repeat;
@@ -64,7 +60,6 @@ body {
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  animation: fadeIn 2s ease-in-out;
 }
 
 .header p {
@@ -90,7 +85,6 @@ body {
   transform: scale(1.1);
 }
 
-/* News Section */
 .news {
   padding: 50px 20px;
   background: #3e3e58;
@@ -132,7 +126,6 @@ body {
   background-color: #5865f2;
 }
 
-/* Additional News Information */
 .news-more-info {
   background-color: #4a4a6a;
   padding: 20px;
@@ -156,7 +149,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Features section */
 .features {
   padding: 50px 20px;
   background: #2e2e4e;
@@ -186,7 +178,6 @@ body {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/* Styles when feature is visible */
 .feature.visible {
   transform: scale(1.05);
   opacity: 1;
@@ -203,6 +194,28 @@ body {
 
 .feature:hover {
   transform: scale(1.05);
+}
+
+.about {
+  padding: 20px;
+  background: #4a4a6a;  
+  border-radius: 10px;   
+  text-align: left;      
+  margin-top: 30px;    
+  color: #ddd;           
+}
+
+.about h2 {
+  font-size: 1.8rem;     
+  margin-bottom: 15px;  
+  color: #fff;           
+}
+
+.about p {
+  font-size: 1rem;      
+  color: #ddd;           
+  line-height: 1.6;       
+  margin-bottom: 10px;    
 }
 
 /* Footer */
@@ -348,44 +361,6 @@ textarea {
 .stream-container {
   background: #393961;
   border-radius: 10px;
-  overflow: hidden;
-}
-
-.stream-container iframe {
-  width: 100%;
-  height: 500px;
-  border: none;
-}
-
-.stream-info {
+  padding: 20px;
   margin-top: 30px;
-}
-
-.stream-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.stream-info ul {
-  list-style: none;
-  padding: 0;
-  color: #ddd;
-}
-
-.stream-info li {
-  margin-bottom: 10px;
-}
-
-.stream-chat {
-  margin-top: 50px;
-}
-
-.stream-chat h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.stream-chat p {
-  font-size: 1rem;
-  color: #ddd;
 }
