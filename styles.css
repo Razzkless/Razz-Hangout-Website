@@ -1,5 +1,11 @@
-body {
+/* General Styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
   color: #fff;
   background: linear-gradient(to bottom right, #1e1e2f, #24243e);
@@ -20,6 +26,7 @@ body {
   flex: 1;
 }
 
+/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: center;
@@ -49,6 +56,7 @@ body {
   color: #5865f2;
 }
 
+/* Header */
 .header {
   padding: 60px 20px;
   background: url('./resources/header.webp') center/cover no-repeat;
@@ -67,6 +75,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* Button */
 .btn {
   display: inline-block;
   padding: 12px 30px;
@@ -85,6 +94,7 @@ body {
   transform: scale(1.1);
 }
 
+/* News Section */
 .news {
   padding: 50px 20px;
   background: #3e3e58;
@@ -126,6 +136,7 @@ body {
   background-color: #5865f2;
 }
 
+/* More Info Section */
 .news-more-info {
   background-color: #4a4a6a;
   padding: 20px;
@@ -145,10 +156,7 @@ body {
   margin-bottom: 10px;
 }
 
-.news-more-info p:last-child {
-  margin-bottom: 0;
-}
-
+/* Features Section */
 .features {
   padding: 50px 20px;
   background: #2e2e4e;
@@ -196,6 +204,7 @@ body {
   transform: scale(1.05);
 }
 
+/* About Section */
 .about {
   padding: 20px;
   background: #4a4a6a;  
@@ -224,44 +233,6 @@ footer {
   background: #181820;
   text-align: center;
   font-size: 0.9rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .feature-grid, .news-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar a {
-    font-size: 1rem;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Contact Us Page */
@@ -346,6 +317,7 @@ textarea {
   color: #dc3545;
 }
 
+/* Live Stream Section */
 .live-stream {
   padding: 50px 20px;
   background: #2e2e4e;
@@ -363,4 +335,30 @@ textarea {
   border-radius: 10px;
   padding: 20px;
   margin-top: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .feature-grid, .news-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
 }
