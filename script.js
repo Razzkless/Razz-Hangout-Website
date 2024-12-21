@@ -19,11 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Array of sample news items
     const newsItems = [
-        { title: "Join Razz's stream for a special event tonight!", link: "#" },
-        { title: "New Discord update: Check out the latest features.", link: "#" },
         { title: "Razz is now live on Twitch, come hang out!", link: "https://www.twitch.tv/razzkle" },
-        { title: "Exclusive behind-the-scenes content now available on Discord.", link: "#" },
-        { title: "Stay tuned for a giveaway this weekend during the stream!", link: "#" },
     ];
 
     // Get the news container
