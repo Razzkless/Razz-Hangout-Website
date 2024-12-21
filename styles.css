@@ -64,10 +64,11 @@ header {
     margin-bottom: 50px;
 }
 
-header h1 {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 0;
+/* Image Styling for header logo */
+header img {
+    max-width: 100%; 
+    height: auto; /* Maintain aspect ratio */
+    width: 300px; /* Adjust this value to resize image */
 }
 
 /* About Section Styling */
@@ -100,23 +101,21 @@ header h1 {
     padding: 15px;
     margin: 0 auto;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     width: 100%;
     max-width: 250px;
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Make the entire card clickable */
-.card-link {
-    display: block; /* Make the anchor take up the entire space of the card */
-    text-decoration: none; /* Remove the default underline on the link */
-    color: inherit; /* Inherit the color from the parent element */
-    height: 100%; /* Ensure the link spans the full height of the card */
+.card a {
+    color: #fff;
+    text-decoration: none;
+    display: block; /* Make the entire card clickable */
+    height: 100%; /* Fill the entire card */
 }
 
-/* Card hover effect */
 .card:hover {
-    transform: scale(1.05); /* Only scale the card */
+    transform: scale(1.05); /* Only scale the card to prevent overflow */
     box-shadow: 0 0 15px rgba(255, 99, 71, 0.8);
 }
 
@@ -126,14 +125,7 @@ header h1 {
 }
 
 .card p {
-    font-size: 1.1em;
-    margin-top: 0;
-}
-
-/* Card link hover effect */
-.card-link:hover h3,
-.card-link:hover p {
-    color: #ff6347; /* Optional: change color on hover */
+    font-size: 1em;
 }
 
 /* News Section Styling */
@@ -160,17 +152,18 @@ header h1 {
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 150px; /* Set fixed height for the container */
+    height: auto; /* Allow the container to expand with content */
     overflow: hidden; /* Hide overflowing content */
     padding: 0;
 }
 
+/* News Items Styling */
 .news-item {
-    position: absolute; /* Position items on top of each other */
     width: 100%;
     padding: 10px;
     background-color: #444;
     border-radius: 5px;
+    margin-bottom: 10px;  /* Add space between items */
     transition: background-color 0.3s ease;
     animation: scroll-news 10s linear infinite;
 }
@@ -188,10 +181,10 @@ header h1 {
 /* Scrolling animation */
 @keyframes scroll-news {
     0% {
-        top: 100%; /* Start from below the container */
+        transform: translateY(100%); /* Start from below the container */
     }
     100% {
-        top: -100%; /* Scroll out of view */
+        transform: translateY(-100%); /* Scroll out of view */
     }
 }
 
@@ -210,6 +203,7 @@ footer {
     color: #ffffff;
 }
 
+/* Responsive Styling */
 @media (max-width: 768px) {
     #about {
         flex-direction: column;
@@ -222,8 +216,8 @@ footer {
         max-width: 100%;
     }
 
-    header h1 {
-        font-size: 2.5em;
+    header img {
+        width: 200px; /* Adjust image size for smaller screens */
     }
 
     .card {
