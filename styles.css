@@ -64,13 +64,6 @@ header {
     margin-bottom: 50px;
 }
 
-/* Image Styling for header logo */
-header img {
-    max-width: 100%; 
-    height: auto; /* Maintain aspect ratio */
-    width: 300px; /* Adjust this value to resize image */
-}
-
 /* About Section Styling */
 #about {
     display: flex;
@@ -128,71 +121,6 @@ header img {
     font-size: 1em;
 }
 
-/* News Section Styling */
-#news {
-    margin-top: 50px;
-    background-color: #333;
-    color: #fff;
-    padding: 30px 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 50px auto;
-}
-
-#news h2 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ff6347;
-}
-
-.news-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    height: auto; /* Allow the container to expand with content */
-    overflow: hidden; /* Hide overflowing content */
-    padding: 0;
-}
-
-/* News Items Styling */
-.news-item {
-    width: 100%;
-    padding: 10px;
-    background-color: #444;
-    border-radius: 5px;
-    margin-bottom: 10px;  /* Add space between items */
-    transition: background-color 0.3s ease;
-    animation: scroll-news 10s linear infinite;
-}
-
-.news-item a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.news-item a:hover {
-    text-decoration: underline;
-}
-
-/* Scrolling animation */
-@keyframes scroll-news {
-    0% {
-        transform: translateY(100%); /* Start from below the container */
-    }
-    100% {
-        transform: translateY(-100%); /* Scroll out of view */
-    }
-}
-
-/* Pause scrolling on hover */
-.news-container:hover .news-item {
-    animation-play-state: paused;
-}
-
 /* Footer Styling */
 footer {
     background-color: #2e2e2e;
@@ -216,20 +144,8 @@ footer {
         max-width: 100%;
     }
 
-    header img {
-        width: 200px; /* Adjust image size for smaller screens */
-    }
-
     .card {
         width: 80%;
         margin-bottom: 20px;
-    }
-
-    #news {
-        padding: 20px;
-    }
-
-    .news-item a {
-        font-size: 1.1em;
     }
 }
