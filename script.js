@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if the stream is live
     fetch(`https://api.twitch.tv/helix/streams?user_login=${twitchChannel}`, {
         headers: {
-            "Client-ID": "m6t65ory9q1wb0cqfpb5r55ogzk9sc", // Replace with your own Twitch Client-ID
-            "Authorization": "Bearer m6t65ory9q1wb0cqfpb5r55ogzk9sc" // Replace with your OAuth token
+            "Client-ID": "kj228ogrtqt0pi9u8u9hpnlrrrig09", // Replace with your own Twitch Client-ID
+            "Authorization": "Bearer f16hgf8ckh8gv93x5e7ynmr4kio7ht" // Replace with your OAuth token
         }
     })
     .then(response => response.json())
     .then(data => {
         if (data.data.length > 0) {
             // If the stream is live, embed the stream
-            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=www.yourwebsite.com`;
+            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=https://razz-hangout-website.onrender.com/`;
             offlineMessage.style.display = "none"; // Hide the offline message
         } else {
             // If the stream is offline, show an offline message
