@@ -1,43 +1,43 @@
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll(".nav-link");
 
-    // Zorg ervoor dat de actieve klasse goed wordt ingesteld voor links
+    // Ensure the active class is correctly set for links
     navLinks.forEach(link => {
         link.addEventListener("click", function() {
-            // Verwijder de 'active' klasse van alle links
+            // Remove the 'active' class from all links
             navLinks.forEach(link => link.classList.remove("active"));
-            // Voeg de 'active' klasse toe aan de geklikte link
+            // Add the 'active' class to the clicked link
             link.classList.add("active");
         });
     });
 });
 
-// JavaScript voor de Twitch Stream Embed
+// JavaScript for Twitch Stream Embed
 document.addEventListener("DOMContentLoaded", function() {
     const streamEmbed = document.getElementById("stream-embed");
     const iframe = document.getElementById("twitch-iframe");
     const offlineMessage = document.getElementById("offline-message");
 
-    // Twitch API-instellingen
-    const twitchChannel = "razzkle"; // Vervang dit door je Twitch-kanaalnaam
+    // Twitch API settings
+    const twitchChannel = "razzkle"; // Replace this with your Twitch channel name
 
-    // Controleer of de stream live is
+    // Check if the stream is live
     fetch(`https://api.twitch.tv/helix/streams?user_login=${twitchChannel}`, {
         headers: {
-            "Client-ID": "3hmt44kgzvi1crfp0pq7rh6d175ya1", // Vervang met je eigen Twitch Client-ID
-            "Authorization": "Bearer your_oauth_token" // Vervang met je OAuth-token
+            "Client-ID": "m6t65ory9q1wb0cqfpb5r55ogzk9sc", // Replace with your own Twitch Client-ID
+            "Authorization": "Bearer m6t65ory9q1wb0cqfpb5r55ogzk9sc" // Replace with your OAuth token
         }
     })
     .then(response => response.json())
     .then(data => {
         if (data.data.length > 0) {
-            // Als de stream live is, embed de stream
-            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=www.jouwwebsite.com`;
-            offlineMessage.style.display = "none"; // Verberg offline bericht
+            // If the stream is live, embed the stream
+            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=www.yourwebsite.com`;
+            offlineMessage.style.display = "none"; // Hide the offline message
         } else {
-            // Als de stream offline is, toon een offline bericht
+            // If the stream is offline, show an offline message
             offlineMessage.style.display = "block";
-            iframe.style.display = "none"; // Verberg de iframe als de stream offline is
+            iframe.style.display = "none"; // Hide the iframe if the stream is offline
         }
     })
     .catch(error => {
