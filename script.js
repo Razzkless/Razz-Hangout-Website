@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const offlineButton = document.getElementById("offline-button");
 
     const twitchChannel = "razzkle"; // Your Twitch channel name
-    const clientId = "kj228ogrtqt0pi9u8u9hpnlrrrig09"; // Replace with actual Client-ID
-    const oauthToken = "lpgcptn3hgsaxhr54wzv4oiu9m32fr"; // Replace with actual OAuth token
+    const clientId = "quziktlhrysy0f4qemjdk6ejulcthq"; // Replace with actual Client-ID
+    const oauthToken = "ote69gjw40pak1u7r4o47yi74yec4s"; // Replace with actual OAuth token
 
     // Fetch the stream status from Twitch API
     fetch(`https://api.twitch.tv/helix/streams?user_login=${twitchChannel}`, {
