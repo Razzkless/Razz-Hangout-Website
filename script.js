@@ -10,29 +10,30 @@ document.addEventListener("DOMContentLoaded", function() {
             link.classList.add("active");
         });
     });
-});
 
-// JavaScript for Twitch Stream Embed
-document.addEventListener("DOMContentLoaded", function() {
+    // Twitch Stream Embed
     const streamEmbed = document.getElementById("stream-embed");
     const iframe = document.getElementById("twitch-iframe");
     const offlineMessage = document.getElementById("offline-message");
 
     // Twitch API settings
-    const twitchChannel = "razzkle"; // Replace this with your Twitch channel name
+    const twitchChannel = "razzkle"; // Replace with your Twitch channel name
+    const clientId = "your-client-id"; // Replace with your actual Client-ID
+    const oauthToken = "your-oauth-token"; // Replace with your OAuth token (this can be obtained after logging in via Twitch API)
 
     // Check if the stream is live
     fetch(`https://api.twitch.tv/helix/streams?user_login=${twitchChannel}`, {
+        method: 'GET',
         headers: {
-            "Client-ID": "kj228ogrtqt0pi9u8u9hpnlrrrig09", // Replace with your own Twitch Client-ID
-            "Authorization": "Bearer f16hgf8ckh8gv93x5e7ynmr4kio7ht" // Replace with your OAuth token
+            "Client-ID": clientId,
+            "Authorization": `Bearer ${oauthToken}`
         }
     })
     .then(response => response.json())
     .then(data => {
         if (data.data.length > 0) {
             // If the stream is live, embed the stream
-            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=https://razz-hangout-website.onrender.com/`;
+            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=your-website.com`; // Replace with your actual website URL in parent
             offlineMessage.style.display = "none"; // Hide the offline message
         } else {
             // If the stream is offline, show an offline message
@@ -42,5 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .catch(error => {
         console.error("Error fetching Twitch stream data:", error);
+        offlineMessage.innerText = "Error fetching stream data. Please try again later.";
+        offlineMessage.style.display = "block";
+        iframe.style.display = "none"; // Hide iframe in case of an error
     });
 });
