@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Razz's Hangout</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
             <ul class="navbar-list" id="navbar-list">
-                <li><a href="#" class="nav-link" id="home-link">Home</a></li>
+                <li><a href="" class="nav-link" id="home-link">Home</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Home Section -->
-        <section id="home" class="section">
+        <section id="home" class="section-container home-section">
             <h1>Welcome to Razz's Hangout!</h1>
             <p>The best place to chill, have fun, and meet great people!</p>
-            
+
             <!-- Hover Cards Section -->
             <div class="hover-cards">
                 <a href="https://discord.gg/rNstb4un4b" class="card discord-card" target="_blank">
                     <h3>Join Razz's Hangout Discord!</h3>
                     <p>Become a member of the community and chat with others!</p>
                 </a>
-
                 <a href="https://www.twitch.tv/razzkle" class="card twitch-card" target="_blank">
                     <h3>Follow Razz's Hangout on Twitch!</h3>
                     <p>Don't miss any streams and join the fun!</p>
                 </a>
             </div>
+        </section>
 
-            <!-- About Us Section -->
-            <div class="about-us-container">
-                <h2>About Us</h2>
-                <p>We are a vibrant community of gamers, streamers, and creators who come together to share fun, friendship, and excitement! Join us as we explore the world of gaming, live streams, and community events!</p>
-            </div>
+        <!-- About Us Section -->
+        <section id="about" class="section-container about-us-container">
+            <h2>About Us</h2>
+            <p>We are a vibrant community of gamers, streamers, and creators who come together to share fun, friendship, and excitement! Join us as we explore the world of gaming, live streams, and community events!</p>
         </section>
 
         <!-- Stream Embed Section -->
-        <section id="stream-embed" class="stream-embed">
+        <section id="stream-embed" class="section-container stream-embed">
             <h2>Watch the Live Stream!</h2>
-            
+
             <!-- Live/Offline Buttons -->
             <div id="status-buttons">
                 <button id="live-button" class="status-button live" style="display: none;">Live</button>
                 <button id="offline-button" class="status-button offline" style="display: none;">Offline</button>
             </div>
-            
+
             <!-- Twitch iframe will load dynamically -->
-            <iframe id="twitch-iframe" src="" height="600" width="100%" frameborder="0" scrolling="no" allowfullscreen="true" style="display: none;"></iframe>
+            <iframe id="twitch-iframe" src="" height="400" width="100%" frameborder="0" scrolling="no" allowfullscreen="true" style="display: none;"></iframe>
             <p id="offline-message" style="display: none;">The stream is currently offline.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Razz's Hangout | Follow us on 
-            <a href="https://discord.gg/rNstb4un4b" target="_blank">Discord</a> and 
+        <p>&copy; 2024 Razz's Hangout | Follow us on
+            <a href="https://discord.gg/rNstb4un4b" target="_blank">Discord</a> and
             <a href="https://www.twitch.tv/razzkle" target="_blank">Twitch</a>
         </p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

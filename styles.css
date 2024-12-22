@@ -17,7 +17,7 @@ body {
     min-height: 100vh;  /* Ensures the body covers full height */
 }
 
-/* Navbar styles */
+/* Navbar styles (keeping only the "Home" link) */
 .navbar {
     background-color: #1e1e1e;
     position: fixed;
@@ -38,17 +38,15 @@ body {
     margin: 0 20px;
 }
 
-.navbar-list .nav-link {
-    color: #ff9e2b;  /* Change link color to match footer link color */
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s, transform 0.3s;
+/* Keeping only the home link style */
+.nav-link {
+    color: #ff9e2b;  /* Footer link color */
+    font-size: 14px;  /* Footer font size */
+    text-decoration: none; /* No underline by default */
 }
 
-.navbar-list .nav-link:hover {
-    color: #fff;
-    transform: scale(1.1);
+.nav-link:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Smooth scrolling for navigation */
@@ -56,16 +54,32 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Home Section */
-#home {
+/* General Section Styling */
+.section-container {
     padding: 50px 15px;
     text-align: center;
-    background-color: #2c2c2c;
-    margin-top: 60px; /* To account for the fixed navbar */
-    position: relative; /* Allow absolute positioning of the buttons inside */
+    background-color: #2c2c2c;  /* Same background as stream embed */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Default shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px 0; /* Spacing between sections */
 }
 
-/* Header styles for home section */
+/* Removed hover effect for general sections */
+#home .section-container,
+#about .section-container,
+#stream-embed .section-container {
+    transition: none; /* Disable hover effect for general sections */
+}
+
+/* Home Section - Updated background color */
+#home {
+    margin-top: 60px; /* To account for the fixed navbar */
+    position: relative; /* Allow absolute positioning of the buttons inside */
+    background-color: #222;  /* Updated to match About Us and Stream Embed sections */
+}
+
+/* Header styles for sections */
 h1, h2 {
     font-size: 24px;
     font-weight: 700;
@@ -102,6 +116,7 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Glow effect for Discord and Twitch Cards */
 .discord-card:hover,
 .twitch-card:hover {
     box-shadow: 0 8px 20px rgba(255, 165, 0, 0.7); /* Orange glow effect */
@@ -120,12 +135,12 @@ p {
     margin-bottom: 12px;
 }
 
-/* About Us Section with Card Hover and Glow Effect */
+/* About Us Section - Updated Background to Match Live Stream */
 .about-us-container {
-    text-align: center;
     margin-top: 40px;
+    text-align: center;
     padding: 20px;
-    background-color: #2c2c2c;
+    background-color: #222;  /* Updated to match Stream Embed section */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -149,7 +164,7 @@ p {
     line-height: 1.6;
 }
 
-/* Stream Embed Section with Hover and Glow Effect */
+/* Stream Embed Section - Keeping hover effect */
 .stream-embed {
     margin-top: 20px;
     padding: 20px;
@@ -158,6 +173,8 @@ p {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Default shadow */
+    max-width: 800px;  /* Limit the maximum width */
+    margin: 20px auto;  /* Center it horizontally */
 }
 
 /* Glow effect and scale on hover for stream embed container */
@@ -197,6 +214,18 @@ p {
     display: none;
     color: #fff;
     margin-top: 10px;
+}
+
+/* Adjusting Twitch Embed for more compactness */
+.stream-embed iframe {
+    max-width: 100%;   /* Ensure iframe width doesn't exceed its container */
+    height: 400px;     /* Set a fixed height for a compact look */
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stream-embed iframe:hover {
+    transform: scale(1.05);  /* Slightly scale the iframe on hover */
 }
 
 /* Footer styles */
