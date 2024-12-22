@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         if (data.data.length > 0) {
             // If the stream is live, embed the stream
-            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=your-website.com`; // Replace with your actual website URL in parent
+            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=https://razz-hangout-website.onrender.com/`; // Replace with your actual website URL in parent
             offlineMessage.style.display = "none"; // Hide the offline message
         } else {
             // If the stream is offline, show an offline message
