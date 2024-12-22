@@ -1,42 +1,46 @@
-window.addEventListener("DOMContentLoaded", () => {
-    // Create snowflakes
-    for (let i = 0; i < 50; i++) {  // Create 50 snowflakes
-        const snowflake = document.createElement("div");
-        snowflake.classList.add("snowflake");
-        snowflake.innerHTML = "&#10052;";  // Snowflake character
-        snowflake.style.fontSize = `${Math.random() * 20 + 10}px`; // Randomize size
-        snowflake.style.left = `${Math.random() * 100}vw`; // Randomize initial position
-        snowflake.style.animationDuration = `${Math.random() * 3 + 7}s`; // Random animation speed
-        snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll(".nav-link");
 
-        // Randomize horizontal drift
-        const xValue = (Math.random() * 30 - 15) + 'vw'; // Random X drift between -15vw and 15vw
-        snowflake.style.setProperty('--x', xValue);
+    // Zorg ervoor dat de actieve klasse goed wordt ingesteld voor links
+    navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            // Verwijder de 'active' klasse van alle links
+            navLinks.forEach(link => link.classList.remove("active"));
+            // Voeg de 'active' klasse toe aan de geklikte link
+            link.classList.add("active");
+        });
+    });
+});
 
-        // Add snowflake to the body
-        document.body.appendChild(snowflake);
-    }
+// JavaScript voor de Twitch Stream Embed
+document.addEventListener("DOMContentLoaded", function() {
+    const streamEmbed = document.getElementById("stream-embed");
+    const iframe = document.getElementById("twitch-iframe");
+    const offlineMessage = document.getElementById("offline-message");
 
-    // Array of sample news items
-    const newsItems = [
-        { title: "Razz is now live on Twitch, come hang out!", link: "https://www.twitch.tv/razzkle" },
-    ];
+    // Twitch API-instellingen
+    const twitchChannel = "razzkle"; // Vervang dit door je Twitch-kanaalnaam
 
-    // Get the news container
-    const newsContainer = document.querySelector(".news-container");
-
-    // Create and append news items
-    newsItems.forEach(item => {
-        const newsItem = document.createElement("div");
-        newsItem.classList.add("news-item");
-
-        // Create clickable link
-        const newsLink = document.createElement("a");
-        newsLink.href = item.link;
-        newsLink.target = "_blank";
-        newsLink.textContent = item.title;
-
-        newsItem.appendChild(newsLink);
-        newsContainer.appendChild(newsItem);
+    // Controleer of de stream live is
+    fetch(`https://api.twitch.tv/helix/streams?user_login=${twitchChannel}`, {
+        headers: {
+            "Client-ID": "3hmt44kgzvi1crfp0pq7rh6d175ya1", // Vervang met je eigen Twitch Client-ID
+            "Authorization": "Bearer your_oauth_token" // Vervang met je OAuth-token
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.data.length > 0) {
+            // Als de stream live is, embed de stream
+            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=www.jouwwebsite.com`;
+            offlineMessage.style.display = "none"; // Verberg offline bericht
+        } else {
+            // Als de stream offline is, toon een offline bericht
+            offlineMessage.style.display = "block";
+            iframe.style.display = "none"; // Verberg de iframe als de stream offline is
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching Twitch stream data:", error);
     });
 });

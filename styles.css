@@ -1,151 +1,150 @@
-/* Global reset */
+/* Algemene reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ensure body and html elements take full height and prevent overflow */
-html, body {
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    overflow-y: hidden; /* Prevent vertical scroll caused by snowflakes */
-}
-
-/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    overflow: hidden; /* Prevent overflow on the body */
-    width: 100%; /* Ensure body does not exceed the viewport */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #181818;
+    color: #e0e0e0;
+    line-height: 1.6;
 }
 
-/* Snowflakes */
-.snowflake {
-    position: absolute;
-    top: -10px; /* Keep it outside the top of the page */
-    z-index: 999;
-    color: #fff;
-    font-size: 1em;
-    user-select: none;
-    pointer-events: none;
-    animation: snow 10s linear infinite, drift 5s ease-in-out infinite;
-}
-
-@keyframes snow {
-    0% {
-        transform: translateX(0) translateY(-10px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(var(--x)) translateY(100vh);
-        opacity: 0;
-    }
-}
-
-@keyframes drift {
-    0% {
-        transform: translateX(var(--x)) translateY(-10px);
-    }
-    100% {
-        transform: translateX(var(--x)) translateY(100vh);
-    }
-}
-
-/* Header Styling */
-header {
-    background-color: #2e2e2e;
-    padding: 40px 0;
-    color: #ffffff;
-    margin-bottom: 50px;
-}
-
-/* About Section Styling */
-#about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 1.1em;
-    color: #ddd;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+/* Navbar stijlen */
+.navbar {
+    background-color: #1e1e1e;
+    position: fixed;
     width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.left-cards {
+.navbar-list {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 700px;
+    padding: 15px 0;
+}
+
+.navbar-list li {
+    list-style-type: none;
+    margin: 0 25px;
+}
+
+.navbar-list .nav-link {
+    color: #bbb;
+    text-decoration: none;  /* Geen onderstreping van tekst */
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-list .nav-link:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Smooth scrolling voor het navigeren */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Home Sectie stijlen - compacter gemaakt */
+#home {
+    padding: 60px 20px;  /* Verkleinde padding voor een compactere sectie */
+    text-align: center;
+    background-color: #2c2c2c;
+    margin-top: 60px; /* Om ruimte te geven voor de fixed navbar */
+}
+
+h1, h2 {
+    font-size: 28px;  /* Kleinere titels */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;  /* Kleinere margin */
+}
+
+p {
+    font-size: 16px;  /* Kleinere tekst */
+    margin-bottom: 20px;  /* Kleinere margin */
+}
+
+/* Hovering Card Effecten */
+.hover-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Kleinere gap tussen de cards */
+    margin-top: 20px;  /* Kleinere marge boven de cards */
 }
 
 .card {
-    background-color: #333;
-    padding: 15px;
-    margin: 0 auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    width: 100%;
-    max-width: 250px;
+    background-color: #2c2c2c;  /* Zelfde als de achtergrond van de site */
+    border-radius: 8px;
+    padding: 20px;  /* Kleinere padding */
+    width: 220px;  /* Kleinere breedte */
     text-align: center;
-}
-
-.card a {
-    color: #fff;
-    text-decoration: none;
-    display: block; /* Make the entire card clickable */
-    height: 100%; /* Fill the entire card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block; /* Zorg ervoor dat de <a> tag een block-level element is */
+    text-decoration: none;  /* Geen onderstreping van de tekst in de card */
 }
 
 .card:hover {
-    transform: scale(1.05); /* Only scale the card to prevent overflow */
-    box-shadow: 0 0 15px rgba(255, 99, 71, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.discord-card:hover,
+.twitch-card:hover {
+    box-shadow: 0 8px 20px rgba(255, 165, 0, 0.7);  /* Oranje glow-effect */
 }
 
 .card h3 {
-    font-size: 1.3em;
+    font-size: 22px;  /* Kleinere titels in de cards */
+    font-weight: 600;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 1em;
+    font-size: 14px;  /* Kleinere tekst in de cards */
+    color: #ddd;
+    margin-bottom: 15px;  /* Kleinere marge onder de tekst */
 }
 
-/* Footer Styling */
+/* Twitch Stream Embed */
+.stream-embed {
+    margin-top: 30px;  /* Kleinere marge */
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+.stream-embed iframe {
+    border-radius: 8px;
+    max-width: 100%;
+    height: 500px;  /* Kleinere iframe hoogte */
+}
+
+/* Footer stijlen */
 footer {
-    background-color: #2e2e2e;
-    padding: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #bbb;
     position: fixed;
-    bottom: 0;
     width: 100%;
-    color: #ffffff;
+    bottom: 0;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    #about {
-        flex-direction: column;
-        text-align: center;
-    }
+footer a {
+    color: #bbb;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-    .left-cards {
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .card {
-        width: 80%;
-        margin-bottom: 20px;
-    }
+footer a:hover {
+    color: #fff;
 }

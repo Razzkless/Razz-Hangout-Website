@@ -1,35 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Razz's Hangout Stream & Discord</title>
+    <title>Razz's Hangout</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome To Razz's Hangout</h1>
+        <nav class="navbar">
+            </div>
+            <ul class="navbar-list" id="navbar-list">
+                <li><a href="#home" class="nav-link" id="home-link">Home</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="about">
-        <div class="left-cards">
-            <div class="card">
-                <a href="https://www.twitch.tv/razzkle" target="_blank">
-                    <h3>Twitch Stream</h3>
-                    <p>Watch Razz's hangout Live on Twitch</p>
+    <main>
+        <!-- Home Sectie -->
+        <section id="home" class="section">
+            <h1>Welkom bij Razz's Hangout!</h1>
+            <p>De beste plek om te chillen, plezier te hebben, en geweldige mensen te ontmoeten!</p>
+            
+            <!-- Toegevoegde Hover Cards Sectie -->
+            <div class="hover-cards">
+                <!-- Discord Card (Nu volledig klikbaar) -->
+                <a href="https://discord.gg/rNstb4un4b" class="card discord-card">
+                    <h3>Sluit je aan bij onze Discord!</h3>
+                    <p>Word lid van de community en chat met anderen!</p>
+                </a>
+
+                <!-- Twitch Card (Nu volledig klikbaar) -->
+                <a href="https://www.twitch.tv/razzkle" class="card twitch-card">
+                    <h3>Volg Razz op Twitch!</h3>
+                    <p>Mis geen enkele stream en deel in de lol!</p>
                 </a>
             </div>
-            <div class="card">
-                <a href="https://discord.gg/rNstb4un4b" target="_blank">
-                    <h3>Discord Server</h3>
-                    <p>Join Razz's Hangout Discord Community</p>
-                </a>
+
+            <!-- Twitch Stream Embed Sectie -->
+            <div class="stream-embed" id="stream-embed">
+                <h2>Bekijk de Live Stream!</h2>
+                <iframe id="twitch-iframe" src="" height="600" width="100%" frameborder="0" scrolling="no" allowfullscreen="true">
+                </iframe>
+                <p id="offline-message" style="display: none;">De stream is momenteel offline.</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Razz's Hangout. All Rights Reserved.</p>
+        <p>&copy; 2024 Razz's Hangout | Volg ons op 
+            <a href="https://discord.gg/rNstb4un4b" target="_blank">Discord</a> en 
+            <a href="https://www.twitch.tv/razzkle" target="_blank">Twitch</a>
+        </p>
     </footer>
 
     <script src="script.js"></script>
