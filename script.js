@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Twitch API settings
     const twitchChannel = "razzkle"; // Replace with your Twitch channel name
-    const clientId = "your-client-id"; // Replace with your actual Client-ID
-    const oauthToken = "your-oauth-token"; // Replace with your OAuth token (this can be obtained after logging in via Twitch API)
+    const clientId = "kj228ogrtqt0pi9u8u9hpnlrrrig09"; // Replace with your actual Client-ID
+    const oauthToken = "lpgcptn3hgsaxhr54wzv4oiu9m32fr"; // Replace with your OAuth token (this can be obtained after logging in via Twitch API)
 
     // Check if the stream is live
     fetch(`https://api.twitch.tv/helix/streams?user_login=${twitchChannel}`, {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         if (data.data.length > 0) {
             // If the stream is live, embed the stream
-            iframe.src = `https://player.twitch.tv/?channel=${twitchChannel}&parent=https://razz-hangout-website.onrender.com/`; // Replace with your actual website URL in parent
+            iframe.src = `https://player.twitch.tv/?channel=razzkle&parent=https://razz-hangout-website.onrender.com/`; // Replace with your actual website URL in parent
             offlineMessage.style.display = "none"; // Hide the offline message
         } else {
             // If the stream is offline, show an offline message
@@ -48,3 +48,4 @@ document.addEventListener("DOMContentLoaded", function() {
         iframe.style.display = "none"; // Hide iframe in case of an error
     });
 });
+
